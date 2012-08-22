@@ -3,6 +3,7 @@ b43-fwcutter
 btrfs-progs
 crda
 darkhttpd
+dbus
 ddrescue
 dhclient
 dialog
@@ -12,6 +13,9 @@ dnsutils
 dosfstools
 efibootmgr
 elinks
+gdm
+gnome
+gnome-extra
 gnu-netcat
 gptfdisk
 grml-zsh-config
@@ -45,8 +49,15 @@ systemd
 tcpdump
 usb_modeswitch
 vpnc
+wget
 wireless_tools
 wpa_actiond
+xf86-video-ati
+xf86-video-fbdev
+xf86-video-nouveau
+xf86-video-vesa
+xorg-server
+xorg-xinit
 wvdial
 zd1211-firmware
 zsh
