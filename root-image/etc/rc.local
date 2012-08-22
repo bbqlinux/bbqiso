@@ -1,0 +1,6 @@
+# Create the user directory for live session
+if [ ! -d /home/bbqlinux ]; then
+    mkdir /home/bbqlinux && chown bbqlinux /home/bbqlinux
+fi
+# Copy files over to home
+su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/bbqlinux/" bbqlinux
