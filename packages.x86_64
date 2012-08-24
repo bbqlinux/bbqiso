@@ -49,6 +49,7 @@ speedtouch
 systemd
 tcpdump
 usb_modeswitch
+virtualbox-archlinux-additions
 vpnc
 wget
 wireless_tools
