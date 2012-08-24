@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usb/bin/tint2
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name=Tint 2
+Comment=Taskbar
