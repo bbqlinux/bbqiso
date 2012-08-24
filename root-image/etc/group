@@ -33,5 +33,6 @@ power:x:98:bbqlinux
 nobody:x:99:
 users:x:100:
 nopasswdlogin:x:111:bbqlinux
+gdm:x:120:
 rtkit:x:133:
 usbmux:x:140:
