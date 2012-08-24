@@ -15,6 +15,7 @@ efibootmgr
 elinks
 firefox
 gdm
+geany
 gnome
 gnome-extra
 gnu-netcat
@@ -53,6 +54,7 @@ tcpdump
 tint2
 usb_modeswitch
 virtualbox-archlinux-additions
+vlc
 vpnc
 wget
 wireless_tools
