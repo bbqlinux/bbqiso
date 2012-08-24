@@ -42,6 +42,7 @@ openconnect
 openssh
 openvpn
 parted
+polkit
 pptpclient
 rp-pppoe
 rsync
@@ -49,6 +50,7 @@ smartmontools
 speedtouch
 systemd
 tcpdump
+tint2
 usb_modeswitch
 virtualbox-archlinux-additions
 vpnc
