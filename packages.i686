@@ -13,6 +13,7 @@ dnsutils
 dosfstools
 efibootmgr
 elinks
+firefox
 gdm
 gnome
 gnome-extra
@@ -29,6 +30,7 @@ lftp
 lilo
 linux-atm
 mtools
+nano
 netcfg
 nfs-utils
 nilfs-utils
