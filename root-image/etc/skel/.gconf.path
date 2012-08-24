@@ -1,0 +1,2 @@
+xml:readonly:$(HOME)/.gconf.path.mandatory
+xml:readwrite:$(HOME)/.gconf.path.defaults
