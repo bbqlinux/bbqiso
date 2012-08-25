@@ -41,8 +41,8 @@ ca::ctrlaltdel:/sbin/shutdown -t3 -r now
 
 # Example lines for starting a login manager
 #x:5:respawn:/usr/bin/xdm -nodaemon
-x:5:respawn:/usr/sbin/gdm -nodaemon
+#x:5:respawn:/usr/sbin/gdm -nodaemon
 #x:5:respawn:/usr/bin/kdm -nodaemon
-#x:5:respawn:/usr/bin/slim >/dev/null 2>&1
+x:5:respawn:/usr/bin/slim >/dev/null 2>&1
 
 # End of file
