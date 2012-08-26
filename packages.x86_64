@@ -1,6 +1,7 @@
 arch-install-scripts
 archlinux-themes-slim
 b43-fwcutter
+bbqinstaller
 btrfs-progs
 crda
 darkhttpd
@@ -18,6 +19,7 @@ firefox
 gamin
 geany
 gnu-netcat
+gparted
 gptfdisk
 grml-zsh-config
 grub-bios
@@ -27,6 +29,7 @@ gvfs
 gvfs-afc
 haveged
 hdparm
+inxi
 ipw2100-fw
 ipw2200-fw
 irssi
@@ -49,6 +52,9 @@ p7zip
 parted
 polkit
 pptpclient
+pyparted
+python2
+pywebkitgtk
 rp-pppoe
 rsync
 slim
