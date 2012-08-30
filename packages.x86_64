@@ -1,3 +1,4 @@
+android-sdk
 arch-install-scripts
 archlinux-themes-slim
 b43-fwcutter
@@ -34,6 +35,7 @@ grml-zsh-config
 grub-bios
 grub-efi-x86_64
 gstreamer0.10-base-plugins
+gtk-theme-shiki-colors
 gvfs
 gvfs-afc
 haveged
@@ -71,6 +73,7 @@ openssh
 openvpn
 optipng
 p7zip
+package-query
 parted
 perl
 perl-switch
@@ -111,6 +114,8 @@ xfce4
 xfce4-goodies
 xorg-server
 xorg-xinit
+yajl
+yaourt
 zip
 zd1211-firmware
 zlib
