@@ -1,4 +1,4 @@
-USER=bbqlinux
+LIVEUSER=bbqlinux
 
 # Create the live user
-useradd -m -k /etc/skel -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash -p $(mkpasswd --hash=md5 $USER) $USER
+useradd -m -k /etc/skel -g users -G audio,games,lp,nopasswdlogin,optical,power,scanner,storage,video,wheel -s /bin/bash -p $(mkpasswd --hash=md5 $LIVEUSER) $LIVEUSER
