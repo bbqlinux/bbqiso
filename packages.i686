@@ -39,12 +39,14 @@ ipw2100-fw
 ipw2200-fw
 irssi
 lftp
+libmtp
 libpng
 libusb
 libusb-compat
 lilo
 linux-atm
 mtools
+mtpfs
 nano
 ncurses
 netcfg

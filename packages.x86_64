@@ -43,6 +43,7 @@ ipw2100-fw
 ipw2200-fw
 irssi
 lftp
+libmtp
 lib32-gcc-libs
 lib32-ncurses
 lib32-readline
@@ -54,6 +55,7 @@ libusb-compat
 lilo
 linux-atm
 mtools
+mtpfs
 nano
 ncurses
 netcfg
