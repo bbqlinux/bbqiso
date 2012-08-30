@@ -25,6 +25,8 @@ setup_workdir() {
 # Base installation (root-image)
 make_basefs() {
     mkarchiso ${verbose} -w "${work_dir}" -C "${pacman_conf}" -D "${install_dir}" init
+    # remove gcc-libs to avoid conflict with gcc-libs-multilib
+    mkarchiso ${verbose} -w "${work_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
     mkarchiso ${verbose} -w "${work_dir}" -C "${pacman_conf}" -D "${install_dir}" -p "memtest86+ mkinitcpio-nfs-utils nbd curl" install
 }
 

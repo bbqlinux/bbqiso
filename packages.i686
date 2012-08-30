@@ -21,6 +21,8 @@ expect
 firefox
 flex
 gamin
+gcc-libs-multilib 
+gcc-multilib
 geany
 git
 gnupg
