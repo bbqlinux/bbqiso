@@ -84,7 +84,13 @@ speedtouch
 squashfs-tools
 systemd
 tcpdump
+terminus-font
+ttf-bitstream-vera
+ttf-dejavu
 ttf-droid
+ttf-inconsolata
+ttf-liberation
+ttf-linux-libertine
 ttf-ubuntu-font-family
 tumbler
 unzip
