@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Install BBQLinux
+Comment=
+Exec=/usr/bin/live-installer
+Icon=application-default-icon
+Path=
+Terminal=false
+StartupNotify=false
+GenericName=Let's you install BBQLinux
