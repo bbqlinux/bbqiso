@@ -2,3 +2,6 @@ LIVEUSER=bbqlinux
 
 # Create the live user
 useradd -m -k /etc/skel -g users -G audio,games,lp,nopasswdlogin,optical,power,scanner,storage,video,wheel -s /bin/bash -p $(mkpasswd --hash=md5 $LIVEUSER) $LIVEUSER
+
+# Change finger information for the live user
+chfn -f "BBQLinux Live User" $LIVEUSER
