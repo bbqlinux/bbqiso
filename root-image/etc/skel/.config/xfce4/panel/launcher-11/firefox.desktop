@@ -2,7 +2,7 @@
 Name=Firefox
 GenericName=Web Browser
 GenericName[de]=Web-Browser
-Exec=firefox %u
+Exec=/usr/bin/firefox %u
 Icon=firefox
 Terminal=false
 Type=Application
