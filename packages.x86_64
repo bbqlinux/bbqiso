@@ -15,6 +15,7 @@ dnsutils
 dosfstools
 efibootmgr
 elinks
+expect
 firefox
 gamin
 geany
