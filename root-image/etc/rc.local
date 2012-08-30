@@ -1,12 +1,4 @@
 USER=bbqlinux
 
 # Create the live user
-useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash -p $(mkpasswd --hash=md5 $USER) $USER
-
-# Create the user directory for live session
-if [ ! -d /home/$USER ]; then
-    mkdir /home/$USER && chown $USER /home/$USER
-fi
-
-# Copy files over to home
-su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$USER/" $USER
+useradd -m -k /etc/skel -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash -p $(mkpasswd --hash=md5 $USER) $USER
