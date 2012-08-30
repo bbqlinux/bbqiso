@@ -91,6 +91,7 @@ slim
 smartmontools
 speedtouch
 squashfs-tools
+sudo
 systemd
 tcpdump
 terminus-font
