@@ -6,7 +6,7 @@
 # Executed by startx (run your window manager from here)
 #
 
-DEFAULT_SESSION=xfce4
+DEFAULT_SESSION=startxfce4
 
 case $1 in
 kde)
