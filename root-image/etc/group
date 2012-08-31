@@ -32,6 +32,7 @@ scanner:x:96:
 power:x:98:
 nobody:x:99:
 users:x:100:
+sudo:x:101:
 nopasswdlogin:x:111:
 gdm:x:120:
 rtkit:x:133:

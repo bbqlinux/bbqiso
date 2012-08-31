@@ -5,7 +5,7 @@ PASSWORD=$(perl -e 'print crypt($ARGV[0], "password")' $LIVEUSER)
 groupadd -f nopasswdlogin
 
 # Create the live user
-useradd -m -k /etc/skel -g users -G audio,disk,games,lp,nopasswdlogin,optical,power,scanner,storage,video,wheel -s /bin/bash -p $PASSWORD $LIVEUSER
+useradd -m -k /etc/skel -g users -G audio,games,lp,nopasswdlogin,optical,power,scanner,shutdown,storage,sudo,video -s /bin/bash -p $PASSWORD $LIVEUSER
 
 # Change finger information for the live user
 chfn -f "BBQLinux Live User" $LIVEUSER
