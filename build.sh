@@ -145,6 +145,7 @@ make_customize_root_image() {
         cp -af ${script_path}/root-image ${work_dir}
         cp -aT ${work_dir}/root-image/etc/skel/ ${work_dir}/root-image/root/
         ln -sf /usr/share/zoneinfo/UTC ${work_dir}/root-image/etc/localtime
+        chown root:root ${work_dir}/root-image/etc/sudoers
         chmod 750 ${work_dir}/root-image/etc/sudoers.d
         chmod 440 ${work_dir}/root-image/etc/sudoers.d/g_wheel
         mkdir -p ${work_dir}/root-image/etc/pacman.d
