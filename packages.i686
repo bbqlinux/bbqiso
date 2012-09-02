@@ -26,6 +26,7 @@ gcc-libs-multilib
 gcc-multilib
 geany
 git
+gksu
 gnupg
 gnu-netcat
 gparted
