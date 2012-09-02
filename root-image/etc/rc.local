@@ -9,3 +9,6 @@ useradd -m -k /etc/skel -g users -G audio,games,lp,nopasswdlogin,optical,power,s
 
 # Change finger information for the live user
 chfn -f "BBQLinux Live User" $LIVEUSER
+
+# Copy skel folder to users home
+su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVEUSER/" $LIVEUSER
