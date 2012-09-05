@@ -1,6 +1,8 @@
 android-sdk
 arch-install-scripts
 archlinux-themes-slim
+autoconf
+automake
 b43-fwcutter
 bbqlinux-installer
 bbqlinux-config
@@ -19,6 +21,7 @@ dosfstools
 efibootmgr
 elinks
 expect
+fakeroot
 firefox
 flex
 gamin
@@ -51,6 +54,7 @@ libusb
 libusb-compat
 lilo
 linux-atm
+make
 mtools
 mtpfs
 nano
@@ -70,8 +74,10 @@ optipng
 p7zip
 package-query
 parted
+patch
 perl
 perl-switch
+pkg-config
 polkit
 pptpclient
 pyparted
