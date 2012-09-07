@@ -60,6 +60,8 @@ mtpfs
 nano
 ncurses
 netcfg
+networkmanager
+network-manager-applet
 nfs-utils
 nilfs-utils
 nmap
