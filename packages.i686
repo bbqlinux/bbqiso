@@ -47,6 +47,7 @@ inxi
 ipw2100-fw
 ipw2200-fw
 irssi
+jre7-openjdk
 lftp
 libmtp
 libpng
@@ -69,7 +70,6 @@ ntfs-3g
 ntfsprogs
 ntp
 openconnect
-openjdk6
 openssh
 openvpn
 optipng
