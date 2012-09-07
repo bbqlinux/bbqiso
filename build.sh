@@ -147,6 +147,7 @@ make_customize_root_image() {
         ln -sf /usr/share/zoneinfo/UTC ${work_dir}/root-image/etc/localtime
         ln -sf /usr/bin/mkfs.btrfs ${work_dir}/root-image/sbin
         ln -sf /usr/bin/mkfs.ntfs ${work_dir}/root-image/sbin
+        ln -sf /usr/bin/python2 ${work_dir}/usr/bin/python
         chown root:root ${work_dir}/root-image/etc/sudoers
         chown -R root:root ${work_dir}/root-image/etc/sudoers.d
         chmod 750 ${work_dir}/root-image/etc/sudoers.d
