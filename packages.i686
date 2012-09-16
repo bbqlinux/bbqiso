@@ -81,11 +81,13 @@ patch
 perl
 perl-switch
 pkg-config
+pngcrush
 polkit
 pptpclient
 pyparted
+python-geoip
 python2
-pywebkitgtk
+python2-pyqt
 readline
 repo
 rp-pppoe
