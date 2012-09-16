@@ -44,6 +44,9 @@ gstreamer0.10-base-plugins
 gtk-theme-shiki-colors
 gvfs
 gvfs-afc
+gvfs-gphoto2
+gvfs-obexftp
+gvfs-smb
 haveged
 hdparm
 inxi
@@ -85,12 +88,14 @@ p7zip
 package-query
 parted
 patch
+pavucontrol
 perl
 perl-switch
 pkg-config
 pngcrush
 polkit
 pptpclient
+pulseaudio
 pyparted
 python-geoip
 python2
