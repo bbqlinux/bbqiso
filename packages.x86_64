@@ -1,5 +1,6 @@
 android-host-tools
 android-sdk
+android-udev-rules
 arch-install-scripts
 archlinux-themes-slim
 autoconf
