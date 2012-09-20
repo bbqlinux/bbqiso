@@ -26,6 +26,7 @@ elinks
 expect
 fakeroot
 firefox
+flashplugin
 flex
 gamin
 gcc-libs-multilib 
@@ -49,6 +50,7 @@ gvfs-obexftp
 gvfs-smb
 haveged
 hdparm
+icedtea-web
 inxi
 ipw2100-fw
 ipw2200-fw
