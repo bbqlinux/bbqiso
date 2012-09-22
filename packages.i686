@@ -29,8 +29,8 @@ firefox
 flashplugin
 flex
 gamin
-gcc-libs-multilib 
-gcc-multilib
+gcc
+gcc-libs
 geany
 git
 gksu
