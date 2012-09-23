@@ -130,7 +130,7 @@ ttf-ubuntu-font-family
 tumbler
 unzip
 usb_modeswitch
-virtualbox-guest-additions
+virtualbox-guest-utils
 vlc
 vpnc
 wget
