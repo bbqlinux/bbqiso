@@ -6,8 +6,9 @@ archlinux-themes-slim
 autoconf
 automake
 b43-fwcutter
-bbqlinux-installer
+bbqlinux-artwork
 bbqlinux-config
+bbqlinux-installer
 bbqlinux/swt
 binutils-multilib
 bison
