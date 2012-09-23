@@ -93,4 +93,4 @@ root ALL=(ALL) ALL
  %shutdown ALL=(root) NOPASSWD: /usr/lib/xfce4/xfsm-shutdown-helper
 
 # bbqlinux installer group
- %installer ALL=(ALL) ALL, NOPASSWD: /usr/bin/bbqlinux-installer
+ %installer ALL=(root) ALL, NOPASSWD: /usr/bin/bbqlinux-installer, NOPASSDW: /usr/sbin/gparted

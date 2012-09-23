@@ -34,6 +34,7 @@ nobody:x:99:
 users:x:100:
 sudo:x:101:
 shutdown:x:102:
+installer:x:103:
 nopasswdlogin:x:111:
 gdm:x:120:
 rtkit:x:133:
