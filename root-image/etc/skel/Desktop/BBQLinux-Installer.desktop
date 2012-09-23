@@ -2,10 +2,10 @@
 Version=1.0
 Type=Application
 Name=Install BBQLinux
-Comment=
-Exec=gksudo /usr/bin/bbqlinux-installer
-Icon=application-default-icon
+Comment=Install BBQLinux to disk
+Exec=/usr/bin/bbqlinux-installer
+Icon=bbqlinux_icon_blue_48x48
 Path=
 Terminal=false
 StartupNotify=false
-GenericName=Let's you install BBQLinux
+GenericName=BBQLinux Installer
