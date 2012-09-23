@@ -18,8 +18,13 @@ setup_workdir() {
     cache_dirs=($(pacman -v 2>&1 | grep '^Cache Dirs:' | sed 's/Cache Dirs:\s*//g'))
     mkdir -p "${work_dir}"
     pacman_conf="${work_dir}/pacman.conf"
-    sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${cache_dirs[@]})|g" \
-        "${script_path}/pacman.conf" > "${pacman_conf}"
+    if [[ ${arch} == "x86_64" ]]; then
+        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${cache_dirs[@]})|g" \
+            "${script_path}/pacman.x86_64.conf" > "${pacman_conf}"
+    else
+        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${cache_dirs[@]})|g" \
+            "${script_path}/pacman.i686.conf" > "${pacman_conf}"
+    fi
 }
 
 # Base installation (root-image)
@@ -150,6 +155,12 @@ make_isolinux() {
 make_customize_root_image() {
     if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
         cp -af ${script_path}/root-image ${work_dir}
+        # Copy arch specific pacman.conf to into root image
+        if [[ ${arch} == "x86_64" ]]; then
+            cp -af ${script_path}/pacman.x86_64.conf ${work_dir}/root-image/etc/pacman.conf
+        else
+            cp -af ${script_path}/pacman.i686.conf ${work_dir}/root-image/etc/pacman.conf
+        fi
         cp -aT ${work_dir}/root-image/etc/skel/ ${work_dir}/root-image/root/
         ln -sf /usr/share/zoneinfo/UTC ${work_dir}/root-image/etc/localtime
         ln -sf /usr/bin/mkfs.btrfs ${work_dir}/root-image/sbin
