@@ -26,11 +26,13 @@ dnsutils
 dosfstools
 efibootmgr
 elinks
+ethtool
 expect
 fakeroot
 firefox
 flashplugin
 flex
+fsarchiver
 gamin
 gcc-libs-multilib 
 gcc-multilib
@@ -48,6 +50,7 @@ grub-bios
 grub-efi-x86_64
 gstreamer0.10-base-plugins
 gtk-theme-shiki-colors
+gummiboot-efi
 gvfs
 gvfs-afc
 gvfs-gphoto2
@@ -73,6 +76,7 @@ libusb-compat
 lilo
 linux-atm
 make
+mc
 meld
 mtools
 mtpfs
@@ -94,7 +98,9 @@ openvpn
 optipng
 p7zip
 package-query
+partclone
 parted
+partimage
 patch
 pavucontrol
 perl
@@ -105,12 +111,13 @@ polkit
 pptpclient
 pulseaudio
 pyparted
-python-geoip
+python2-geoip
 python2
 python2-pyqt
 readline
 refind-efi-x86_64
 repo
+rfkill
 roxterm
 rp-pppoe
 rsync
@@ -124,6 +131,7 @@ sudo
 systemd
 tcpdump
 terminus-font
+testdisk
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
