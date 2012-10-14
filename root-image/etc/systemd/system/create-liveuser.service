@@ -1,0 +1,8 @@
+[Unit]
+Description=Create the BBQLinux live user
+
+[Service]
+ExecStart=/etc/bbqlinux/create-liveuser
+
+[Install]
+WantedBy=multi-user.target 
