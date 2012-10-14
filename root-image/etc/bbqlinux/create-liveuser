@@ -1,3 +1,5 @@
+#!/bin/bash
+
 LIVEUSER=bbqlinux
 PASSWORD=$(perl -e 'print crypt($ARGV[0], "password")' $LIVEUSER)
 
@@ -12,3 +14,5 @@ chfn -f "BBQLinux Live User" $LIVEUSER
 
 # Copy skel folder to users home
 su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVEUSER/" $LIVEUSER
+
+exit 0
