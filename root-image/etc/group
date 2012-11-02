@@ -33,9 +33,10 @@ power:x:98:
 nobody:x:99:
 users:x:100:
 sudo:x:101:
-shutdown:x:102:
-installer:x:103:
-nopasswdlogin:x:111:
+polkitd:x:102:
 gdm:x:120:
 rtkit:x:133:
 usbmux:x:140:
+shutdown:x:1000:
+nopasswdlogin:x:1001:
+installer:x:1002:
