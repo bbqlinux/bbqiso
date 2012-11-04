@@ -7,11 +7,9 @@ archlinux-themes-slim
 autoconf
 automake
 b43-fwcutter
-bbqlinux-artwork
-bbqlinux-config
+bbqlinux
 bbqlinux-installer
 bbqlinux/swt
-bbqlinux-themes-slim
 bison
 btrfs-progs
 crda
