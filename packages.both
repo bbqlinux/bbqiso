@@ -27,6 +27,7 @@ elinks
 ethtool
 expect
 fakeroot
+filezilla
 firefox
 flashplugin
 flex
@@ -111,7 +112,6 @@ python2-pyqt
 readline
 repo
 rfkill
-roxterm
 rp-pppoe
 rsync
 schedtool
