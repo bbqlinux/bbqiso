@@ -6,9 +6,12 @@
 # Executed by startx (run your window manager from here)
 #
 
-DEFAULT_SESSION=startxfce4
+DEFAULT_SESSION=mate-session
 
 case $1 in
+mate)
+	exec mate-session
+	;;
 kde)
 	exec startkde
 	;;
