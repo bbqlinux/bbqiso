@@ -12,6 +12,7 @@ bbqlinux-installer
 bbqlinux/swt
 bison
 btrfs-progs
+cpio
 crda
 darkhttpd
 dbus
