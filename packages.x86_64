@@ -3,8 +3,10 @@ gcc-libs-multilib
 gcc-multilib
 grub-efi-x86_64
 gummiboot-efi
+lib32-alsa-plugins
 lib32-gcc-libs
-lib32-ncurses
+lib32-libpulse
+lib32-ncurses 
 lib32-readline
 lib32-zlib
 libtool-multilib

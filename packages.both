@@ -108,6 +108,7 @@ pngcrush
 polkit
 pptpclient
 pulseaudio
+pulseaudio-alsa
 pyparted
 python2-geoip
 python2
