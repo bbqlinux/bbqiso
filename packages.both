@@ -27,6 +27,7 @@ dosfstools
 efibootmgr
 elinks
 ethtool
+evince
 expect
 fakeroot
 filezilla
