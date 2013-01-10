@@ -14,6 +14,8 @@ cp -aT /etc/skel/ /root/
 
 chmod 750 /etc/sudoers.d
 chmod 440 /etc/sudoers.d/g_wheel
+chown root:root /etc/sudoers
+chown -R root:root /etc/sudoers.d
 
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
 
