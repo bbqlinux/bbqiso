@@ -197,14 +197,10 @@ make_aitab() {
 
 # Build all filesystem images specified in aitab (.fs.sfs .sfs)
 make_prepare() {
-	mv ${work_dir}/${iso_arch}/root-image/usr/lib/modules ${work_dir}/usr-lib-modules
-	mv ${work_dir}/${iso_arch}/root-image/usr/share ${work_dir}/usr-share
     cp -a -l -f ${work_dir}/${iso_arch}/root-image ${work_dir}
     setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" pkglist
     setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" prepare
     rm -rf ${work_dir}/root-image
-	mv ${work_dir}/usr-lib-modules ${work_dir}/${iso_arch}/root-image/usr/lib/modules
-	mv ${work_dir}/usr-share ${work_dir}/${iso_arch}/root-image/usr/share
 }
 
 # Build ISO
