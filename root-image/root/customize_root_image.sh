@@ -32,5 +32,5 @@ ln -sf /usr/bin/mkfs.btrfs /sbin/mkfs.btrfs
 ln -sf /usr/bin/mkfs.ntfs /sbin/mkfs.ntfs
 
 # Default to python2
-rm /usr/bin/python
+rm -f /usr/bin/python
 ln -sf /usr/bin/python2 /usr/bin/python
