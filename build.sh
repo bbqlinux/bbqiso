@@ -106,6 +106,13 @@ make_boot() {
     cp ${work_dir}/${iso_arch}/root-image/boot/vmlinuz-linux ${work_dir}/iso/${install_dir}/boot/${iso_arch}/vmlinuz
 }
 
+# Fetch packages for offline installation
+make_packagecache() {
+    pacman -Sy
+    pacman -Sp bash linux > ${work_dir}/packagecache.list
+    wget -P ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg/ -i ${work_dir}/packagecache.list
+}
+
 # Add other aditional/extra files to ${install_dir}/boot/
 make_boot_extra() {
     cp ${work_dir}/${iso_arch}/root-image/boot/memtest86+/memtest.bin ${work_dir}/iso/${install_dir}/boot/memtest
@@ -252,6 +259,8 @@ run_once make_pacman_conf
 #for arch in i686 x86_64; do
     run_once make_boot
 #done
+
+    run_once make_packagecache
 
 # Do all stuff for "iso"
 run_once make_boot_extra
