@@ -60,17 +60,17 @@ make_pacman_conf() {
 
 # Base installation, plus needed packages (root-image)
 make_basefs() {
-    setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" init
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" init
     if [[ ${iso_arch} == "x86_64" ]]; then
         # remove gcc-libs to avoid conflict with gcc-libs-multilib
-        setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
+        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
     fi
-    setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "memtest86+ mkinitcpio-nfs-utils nbd" install
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "memtest86+ mkinitcpio-nfs-utils nbd" install
 }
 
 # Additional packages (root-image)
 make_packages() {
-    setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${iso_arch}})" install
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${iso_arch}})" install
 }
 
 # Copy mkinitcpio archiso hooks and build initramfs (root-image)
@@ -83,7 +83,7 @@ make_setup_mkinitcpio() {
     cp /usr/lib/initcpio/install/archiso_kms ${work_dir}/${iso_arch}/root-image/usr/lib/initcpio/install
     cp /usr/lib/initcpio/archiso_shutdown ${work_dir}/${iso_arch}/root-image/usr/lib/initcpio
     cp ${script_path}/mkinitcpio.conf ${work_dir}/${iso_arch}/root-image/etc/mkinitcpio-archiso.conf
-    setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r 'mkinitcpio -c /etc/mkinitcpio-archiso.conf -k /boot/vmlinuz-linux -g /boot/archiso.img' run
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r 'mkinitcpio -c /etc/mkinitcpio-archiso.conf -k /boot/vmlinuz-linux -g /boot/archiso.img' run
 }
 
 # Customize installation (root-image)
@@ -95,7 +95,7 @@ make_customize_root_image() {
 
     lynx -dump -nolist 'https://wiki.archlinux.org/index.php/Installation_Guide?action=render' >> ${work_dir}/${iso_arch}/root-image/root/install.txt
 
-    setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r '/root/customize_root_image.sh' run
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r '/root/customize_root_image.sh' run
     rm ${work_dir}/${iso_arch}/root-image/root/customize_root_image.sh
 }
 
@@ -107,8 +107,8 @@ make_boot() {
 }
 
 # Fetch packages for offline installation
-make_packagecache() {
-    pacman -Syw bash linux --cachedir ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg/
+make_pkgcache() {
+    pacman -Syw $(grep -h -v ^# ${script_path}/pkgcache.{both,${iso_arch}}) --cachedir ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg/ --noconfirm
 }
 
 # Add other aditional/extra files to ${install_dir}/boot/
@@ -203,15 +203,15 @@ make_aitab() {
 # Build all filesystem images specified in aitab (.fs.sfs .sfs)
 make_prepare() {
     cp -a -l -f ${work_dir}/${iso_arch}/root-image ${work_dir}
-    setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" pkglist
-    setarch ${iso_arch} mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" prepare
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" pkglist
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" prepare
     rm -rf ${work_dir}/root-image
 }
 
 # Build ISO
 make_iso() {
-    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" checksum
-    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -L "${iso_label}" -o "${out_dir}" iso "${iso_name}-${iso_version}-${iso_arch}.iso"
+    bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" checksum
+    bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" -L "${iso_label}" -o "${out_dir}" iso "${iso_name}-${iso_version}-${iso_arch}.iso"
 }
 
 if [[ ${EUID} -ne 0 ]]; then
@@ -258,7 +258,7 @@ run_once make_pacman_conf
     run_once make_boot
 #done
 
-    run_once make_packagecache
+    run_once make_pkgcache
 
 # Do all stuff for "iso"
 run_once make_boot_extra
