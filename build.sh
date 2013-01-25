@@ -108,9 +108,7 @@ make_boot() {
 
 # Fetch packages for offline installation
 make_packagecache() {
-    pacman -Sy
-    pacman -Sp bash linux > ${work_dir}/packagecache.list
-    wget -P ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg/ -i ${work_dir}/packagecache.list
+    pacman -Syw bash linux --cachedir ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg/
 }
 
 # Add other aditional/extra files to ${install_dir}/boot/
