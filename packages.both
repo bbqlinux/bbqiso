@@ -10,6 +10,7 @@ automake
 b43-fwcutter
 bbqlinux
 bbqlinux-installer
+bbqlinux-livemedia
 bbqlinux/swt
 bison
 btrfs-progs
