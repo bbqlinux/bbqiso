@@ -62,11 +62,14 @@ gvfs-smb
 haveged
 heimdall
 hdparm
-icedtea-web
+icedtea-web-java7
 inxi
 ipw2100-fw
 ipw2200-fw
 irssi
+jdk7-openjdk
+jre7-openjdk
+jre7-openjdk-headless 
 lftp
 libmtp
 libpng
@@ -93,7 +96,6 @@ ntfs-3g
 ntfsprogs
 ntp
 openconnect
-openjdk6
 openssh
 openvpn
 optipng
