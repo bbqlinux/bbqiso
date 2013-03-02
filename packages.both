@@ -11,7 +11,6 @@ b43-fwcutter
 bbqlinux
 bbqlinux-installer
 bbqlinux-livemedia
-bbqlinux/swt
 bison
 btrfs-progs
 cpio
@@ -131,6 +130,7 @@ smartmontools
 speedtouch
 squashfs-tools
 sudo
+swt
 systemd
 tcpdump
 terminus-font
