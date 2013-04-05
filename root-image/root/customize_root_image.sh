@@ -37,4 +37,4 @@ rm -f /usr/bin/python
 ln -sf /usr/bin/python2 /usr/bin/python
 
 # Use current date as version string
-echo $(date +"%Y%m%d") > /android/bbqlinux-version
+echo $(date +"%Y%m%d") > /etc/bbqlinux-version

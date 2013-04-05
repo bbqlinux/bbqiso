@@ -1,0 +1,16 @@
+Author: Pierre Schmitz <pierre@archlinux.de>
+
+* pacman-key: Use lsign_keys function in --populate
+* pacman-key: reduce verbosity of --populate
+
+--- pacman-key	2013-04-04 12:26:50.000000000 +0000
++++ pacman-key	2013-04-05 21:59:32.929217885 +0000
+@@ -474,7 +474,7 @@
+ 		msg "$(gettext "Importing owner trust values...")"
+ 		for keyring in "${KEYRINGIDS[@]}"; do
+ 			if [[ -s "${KEYRING_IMPORT_DIR}/${keyring}-trusted" ]]; then
+-				"${GPG_PACMAN[@]}" --import-ownertrust "${KEYRING_IMPORT_DIR}/${keyring}-trusted"
++				"${GPG_PACMAN[@]}" --import-ownertrust "${KEYRING_IMPORT_DIR}/${keyring}-trusted" 2>/dev/null
+ 			fi
+ 		done
+ 	fi
