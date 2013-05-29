@@ -25,7 +25,8 @@ sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
 
 #systemctl disable getty@tty1.service
 #systemctl enable multi-user.target pacman-init.service autologin@.service dhcpcd.service
-systemctl enable pacman-init.service dhcpcd.service
+systemctl enable pacman-init.service
+systemctl enable lightdm.service
 systemctl enable adb.service
 
 # Symlinks for mkfs

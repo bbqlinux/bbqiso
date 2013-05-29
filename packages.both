@@ -4,7 +4,6 @@ android-sdk
 android-sdk-platform-tools
 android-udev-rules
 arch-install-scripts
-archlinux-themes-slim
 autoconf
 automake
 b43-fwcutter
@@ -29,6 +28,7 @@ elinks
 ethtool
 evince
 expect
+f2fs-tools
 fakeroot
 filezilla
 firefox
@@ -47,11 +47,12 @@ gnupg
 gnu-netcat
 gparted
 gperf
+gpm
 gptfdisk
 grml-zsh-config
 grub-bios
 gstreamer0.10-base-plugins
-gtk-theme-shiki-colors
+gtk-theme-bbqlinux
 gvfs
 gvfs-afc
 gvfs-gphoto2
@@ -75,6 +76,8 @@ libmtp
 libpng
 libusb
 libusb-compat
+lightdm
+lightdm-bbqlinux-greeter
 lilo
 linux-atm
 make
@@ -86,7 +89,6 @@ mtools
 mtpfs
 nano
 ncurses
-netcfg
 networkmanager
 network-manager-applet
 nfs-utils
@@ -126,7 +128,6 @@ rsync
 schedtool
 sdl
 sharutils
-slim
 smartmontools
 speedtouch
 squashfs-tools

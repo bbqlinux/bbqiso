@@ -2,7 +2,7 @@ binutils-multilib
 gcc-libs-multilib 
 gcc-multilib
 grub-efi-x86_64
-gummiboot-efi
+gummiboot
 lib32-alsa-plugins
 lib32-gcc-libs
 lib32-libpulse
