@@ -96,6 +96,9 @@ make_customize_root_image() {
 
     setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r '/root/customize_root_image.sh' run
     rm ${work_dir}/${iso_arch}/root-image/root/customize_root_image.sh
+    
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r 'python /root/customize_root_image.py' run
+    rm ${work_dir}/${iso_arch}/root-image/root/customize_root_image.py
 }
 
 # Prepare kernel/initramfs ${install_dir}/boot/
