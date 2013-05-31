@@ -79,7 +79,6 @@ libusb
 libusb-compat
 lightdm
 lightdm-bbqlinux-greeter
-lilo
 linux-atm
 make
 mate

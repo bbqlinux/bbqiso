@@ -61,15 +61,15 @@ make_pacman_conf() {
 # Base installation, plus needed packages (root-image)
 make_basefs() {
     setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" init
-    if [[ ${iso_arch} == "x86_64" ]]; then
-        # remove gcc-libs to avoid conflict with gcc-libs-multilib
-        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
-    fi
     setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "memtest86+ mkinitcpio-nfs-utils nbd" install
 }
 
 # Additional packages (root-image)
 make_packages() {
+    if [[ ${iso_arch} == "x86_64" ]]; then
+        # remove gcc-libs to avoid conflict with gcc-libs-multilib
+        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
+    fi
     setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${iso_arch}})" install
 }
 
