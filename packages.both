@@ -44,6 +44,7 @@ gnome-colors-icon-theme
 gnome-colors-icon-theme-extras
 gnome-icon-theme
 gnome-packagekit
+gnome-settings-daemon-updates
 gnupg
 gnu-netcat
 gparted
