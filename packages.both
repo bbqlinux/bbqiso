@@ -114,6 +114,7 @@ perl-switch
 pkg-config
 pngcrush
 polkit
+polkit-gnome
 pptpclient
 pulseaudio
 pulseaudio-alsa
