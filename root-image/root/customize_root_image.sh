@@ -23,10 +23,6 @@ systemctl enable bluetooth.service
 systemctl enable lightdm.service
 systemctl enable adb.service
 
-# Symlinks for mkfs
-ln -sf /usr/bin/mkfs.btrfs /sbin/mkfs.btrfs
-ln -sf /usr/bin/mkfs.ntfs /sbin/mkfs.ntfs
-
 # Default to python2
 rm -f /usr/bin/python
 ln -sf /usr/bin/python2 /usr/bin/python
