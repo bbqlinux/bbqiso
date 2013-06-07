@@ -74,6 +74,7 @@ jdk7-openjdk
 jre7-openjdk
 jre7-openjdk-headless 
 lftp
+libgnomeui
 libmtp
 libpng
 libusb
