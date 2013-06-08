@@ -54,7 +54,6 @@ gptfdisk
 grml-zsh-config
 grub-bios
 gstreamer0.10-base-plugins
-gtk-theme-bbqlinux
 gvfs
 gvfs-afc
 gvfs-gphoto2
@@ -80,7 +79,6 @@ libpng
 libusb
 libusb-compat
 lightdm
-lightdm-bbqlinux-greeter
 linux-atm
 make
 mate
