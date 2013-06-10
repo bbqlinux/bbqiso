@@ -13,6 +13,7 @@ bbqlinux-installer
 bbqlinux-livemedia
 bison
 btrfs-progs
+ccache
 cpio
 crda
 darkhttpd
