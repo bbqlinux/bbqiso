@@ -121,7 +121,7 @@ pulseaudio-alsa
 pyparted
 python2-geoip
 python2
-python2-pyqt
+python2-pyqt4
 readline
 repo
 rfkill
