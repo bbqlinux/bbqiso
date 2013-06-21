@@ -3,6 +3,7 @@ alsa-utils
 android-host-tools
 android-sdk
 android-sdk-platform-tools
+android-studio
 android-udev-rules
 arch-install-scripts
 autoconf
