@@ -55,6 +55,7 @@ gptfdisk
 grml-zsh-config
 grub-bios
 gstreamer0.10-base-plugins
+gtk-theme-shiki-colors
 gvfs
 gvfs-afc
 gvfs-gphoto2
