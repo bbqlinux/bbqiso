@@ -1,2 +1,2 @@
-core/grub-bios
-core/grub-efi-i386
+grub-bios
+grub-efi-i386

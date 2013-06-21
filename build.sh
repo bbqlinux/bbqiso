@@ -66,7 +66,7 @@ make_basefs() {
 
 # Additional packages (root-image)
 make_packages() {
-    if [[ ${iso_arch} == "x86_64" ]]; then
+    if [[ ${iso_arch} == x86_64 ]]; then
         # remove gcc-libs to avoid conflict with gcc-libs-multilib
         setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
     fi
@@ -90,6 +90,14 @@ make_setup_mkinitcpio() {
 make_customize_root_image() {
     cp -af ${script_path}/root-image ${work_dir}/${iso_arch}
 
+    if [[ ${iso_arch} == x86_64 ]]; then
+        rm ${work_dir}/${iso_arch}/root-image/etc/pacman.i686.conf
+        mv ${work_dir}/${iso_arch}/root-image/etc/pacman.x86_64.conf ${work_dir}/${iso_arch}/root-image/etc/pacman.conf
+    else
+        rm ${work_dir}/${iso_arch}/root-image/etc/pacman.x86_64.conf
+        mv ${work_dir}/${iso_arch}/root-image/etc/pacman.i686.conf ${work_dir}/${iso_arch}/root-image/etc/pacman.conf
+    fi
+
     wget -O ${work_dir}/${iso_arch}/root-image/etc/pacman.d/mirrorlist 'https://www.archlinux.org/mirrorlist/?country=all&protocol=http&use_mirror_status=on'
 
     lynx -dump -nolist 'https://wiki.archlinux.org/index.php/Installation_Guide?action=render' >> ${work_dir}/${iso_arch}/root-image/root/install.txt
@@ -108,15 +116,21 @@ make_boot() {
     cp ${work_dir}/${iso_arch}/root-image/boot/vmlinuz-linux ${work_dir}/iso/${install_dir}/boot/${iso_arch}/vmlinuz
 }
 
-# Fetch packages for offline installation
-make_pkgcache() {
-    pacman -Syw $(grep -h -v ^# ${script_path}/pkgcache.{both,${iso_arch}}) --cachedir ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg/ --noconfirm
-}
-
 # Add other aditional/extra files to ${install_dir}/boot/
 make_boot_extra() {
     cp ${work_dir}/${iso_arch}/root-image/boot/memtest86+/memtest.bin ${work_dir}/iso/${install_dir}/boot/memtest
     cp ${work_dir}/${iso_arch}/root-image/usr/share/licenses/common/GPL2/license.txt ${work_dir}/iso/${install_dir}/boot/memtest.COPYING
+}
+
+# Fetch packages for offline installation
+make_pkgcache() {
+
+    for pkg in $(grep -h -v ^# ${script_path}/pkgcache.{both,${iso_arch}})
+    do
+        rm -f /var/cache/pacman/pkg/${pkg}-*
+    done
+
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/pkgcache.{both,${iso_arch}})" cache
 }
 
 # Prepare /${install_dir}/boot/syslinux
@@ -125,7 +139,7 @@ make_syslinux() {
     for _cfg in ${script_path}/syslinux/*.cfg; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
-			 s|%ARCH%|${arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
+			 s|%ARCH%|${iso_arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
     done
     cp ${script_path}/syslinux/splash.png ${work_dir}/iso/${install_dir}/boot/syslinux
     cp ${work_dir}/${iso_arch}/root-image/usr/lib/syslinux/*.c32 ${work_dir}/iso/${install_dir}/boot/syslinux
@@ -226,7 +240,7 @@ if [[ ${iso_arch} != x86_64 ]]; then
     _usage 1
 fi
 
-while getopts 'N:V:L:D:w:o:vh' arg; do
+while getopts 'A:N:V:L:D:w:o:vh' arg; do
     case "${arg}" in
 		A) iso_arch="${OPTARG}" ;;
         N) iso_name="${OPTARG}" ;;
@@ -247,32 +261,21 @@ done
 mkdir -p ${work_dir}
 
 run_once make_pacman_conf
-
-# Do all stuff for each root-image
-#for arch in i686 x86_64; do
-    run_once make_basefs
-    run_once make_packages
-    run_once make_setup_mkinitcpio
-    run_once make_customize_root_image
-#done
-
-#for arch in i686 x86_64; do
-    run_once make_boot
-#done
-
-    run_once make_pkgcache
-
-# Do all stuff for "iso"
+run_once make_basefs
+run_once make_packages
+run_once make_setup_mkinitcpio
+run_once make_customize_root_image
+run_once make_boot
 run_once make_boot_extra
+run_once make_pkgcache
 run_once make_syslinux
 run_once make_isolinux
-run_once make_efi
-run_once make_efiboot
+
+if [[ ${iso_arch} == x86_64 ]]; then
+    run_once make_efi
+    run_once make_efiboot
+fi
 
 run_once make_aitab
-
-#for arch in i686 x86_64; do
-    run_once make_prepare
-#done
-
+run_once make_prepare
 run_once make_iso

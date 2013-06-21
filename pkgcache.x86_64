@@ -1,2 +1,2 @@
-core/grub-bios
-core/grub-efi-x86_64
+grub-bios
+grub-efi-x86_64
