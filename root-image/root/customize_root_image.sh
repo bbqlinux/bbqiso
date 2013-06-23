@@ -19,6 +19,7 @@ sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
 
 # Enable services
 systemctl enable pacman-init.service
+systemctl enable choose-mirror.service
 systemctl enable bluetooth.service
 systemctl enable lightdm.service
 systemctl enable adb.service
