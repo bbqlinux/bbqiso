@@ -1,7 +1,6 @@
 binutils-multilib
 gcc-libs-multilib 
 gcc-multilib
-grub-efi-x86_64
 gummiboot
 prebootloader
 lib32-alsa-plugins
