@@ -3,6 +3,7 @@ gcc-libs-multilib
 gcc-multilib
 grub-efi-x86_64
 gummiboot
+prebootloader
 lib32-alsa-plugins
 lib32-gcc-libs
 lib32-libpulse
