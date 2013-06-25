@@ -4,7 +4,7 @@ set -e -u
 
 iso_arch=x86_64
 iso_name=bbqlinux
-iso_label="BBQLINUX_$(date +%Y%m)"
+iso_label="BBQ_$(date +%Y%m)"
 iso_version=$(date +%Y.%m.%d)
 install_dir=bbqlinux
 work_dir=work
