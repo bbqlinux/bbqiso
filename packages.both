@@ -104,6 +104,7 @@ openconnect
 openssh
 openvpn
 optipng
+os-prober
 p7zip
 package-query
 partclone
