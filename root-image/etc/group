@@ -37,6 +37,7 @@ polkitd:x:102:
 gdm:x:120:
 rtkit:x:133:
 usbmux:x:140:
+android:x:500:
 shutdown:x:1000:
 nopasswdlogin:x:1001:
 installer:x:1002:
