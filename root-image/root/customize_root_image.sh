@@ -16,6 +16,7 @@ chown root:root /etc/sudoers
 chown -R root:root /etc/sudoers.d
 
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
+sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 
 # Enable services
 systemctl enable pacman-init.service
