@@ -7,7 +7,7 @@ locale-gen
 
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
-usermod -s /bin/zsh root
+usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
 
 chmod 750 /etc/sudoers.d
