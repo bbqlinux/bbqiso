@@ -1,2 +1,2 @@
 # <img>         <mnt>                 <arch>   <sfs_comp>  <fs_type>  <fs_size>
-root-image      /                     %ARCH%   xz          ext4       4096
+root-image      /                     %ARCH%   xz          ext4       5120
