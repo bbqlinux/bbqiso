@@ -63,7 +63,6 @@ gvfs
 gvfs-afc
 gvfs-gphoto2
 gvfs-mtp
-gvfs-obexftp
 gvfs-smb
 haveged
 heimdall
