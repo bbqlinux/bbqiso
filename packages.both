@@ -168,7 +168,6 @@ xf86-input-vmmouse
 xf86-video-ati
 xf86-video-cirrus
 xf86-video-fbdev
-xf86-video-geode
 xf86-video-i740
 xf86-video-intel
 xf86-video-modesetting
