@@ -124,13 +124,16 @@ make_boot_extra() {
 
 # Fetch packages for offline installation
 make_pkgcache() {
-
     for pkg in $(grep -h -v ^# ${script_path}/pkgcache.{both,${iso_arch}})
     do
         rm -f /var/cache/pacman/pkg/${pkg}-*
+        # Get the download link from pacman
+		pkg_path=$(pacman -Sp ${pkg})
+        # Download the package
+		wget -P ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg ${pkg_path}
+        # Download the signature file
+		wget -P ${work_dir}/${iso_arch}/root-image/var/cache/pacman/pkg ${pkg_path}.sig
     done
-
-    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${pacman_conf}" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/pkgcache.{both,${iso_arch}})" cache
 }
 
 # Prepare /${install_dir}/boot/syslinux

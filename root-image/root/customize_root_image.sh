@@ -21,7 +21,6 @@ sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 # Enable services
 systemctl enable pacman-init.service
 systemctl enable choose-mirror.service
-systemctl enable bluetooth.service
 systemctl enable lightdm.service
 systemctl enable adb.service
 
