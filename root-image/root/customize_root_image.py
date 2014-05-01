@@ -9,7 +9,7 @@ newlightdmconfig = open("/etc/lightdm/lightdm.conf.new", "w")
 for line in lightdmconfig:
     line = line.rstrip("\r\n")
     if(line.startswith("#greeter-session=")):
-        newlightdmconfig.write("greeter-session=lightdm-bbqlinux-greeter\n")
+        newlightdmconfig.write("greeter-session=lightdm-gtk-greeter\n")
     elif(line.startswith("#user-session=")):
         newlightdmconfig.write("user-session=mate\n")
     elif(line.startswith("#autologin-user=")):
