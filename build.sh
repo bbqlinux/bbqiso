@@ -288,3 +288,6 @@ fi
 run_once make_aitab
 run_once make_prepare
 run_once make_iso
+
+# Remount pts with correct mode
+mount -o remount,gid=5,mode=620 /dev/pts
