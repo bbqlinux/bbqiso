@@ -89,8 +89,6 @@ root ALL=(ALL) ALL
 ## (the '#' here does not indicate a comment)
 #includedir /etc/sudoers.d
 
-# xfce shutdown helper
- %shutdown ALL=(root) NOPASSWD: /usr/lib/xfce4/xfsm-shutdown-helper
-
-# bbqlinux installer group
+# installer group
  %installer ALL=(root) NOPASSWD: /usr/bin/bbqlinux-installer
+ %installer ALL=(root) NOPASSWD: /usr/bin/calamares
