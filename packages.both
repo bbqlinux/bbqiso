@@ -16,6 +16,8 @@ bbqlinux-livemedia
 binutils
 bison
 btrfs-progs
+calamares
+calamares-bbqlinux
 ccache
 clonezilla
 cpio
