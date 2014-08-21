@@ -22,7 +22,6 @@ ccache
 clonezilla
 cpio
 crda
-darkhttpd
 dbus
 ddrescue
 dhclient
@@ -40,6 +39,7 @@ f2fs-tools
 fakeroot
 filezilla
 firefox
+firefox-adblock-plus
 flashplugin
 flex
 fsarchiver
@@ -84,6 +84,7 @@ lftp
 libgnomeui
 libmtp
 libpng
+libreoffice-fresh
 libusb
 libusb-compat
 linux-atm
@@ -157,6 +158,8 @@ usb_modeswitch
 virtualbox-guest-utils
 vlc
 vpnc
+wayland
+weston
 wget
 wireless_tools
 wpa_actiond
@@ -180,6 +183,7 @@ xf86-video-vesa
 xf86-video-vmware
 xl2tpd
 xorg-server
+xorg-server-xwayland
 xorg-xinit
 yajl
 yaourt
