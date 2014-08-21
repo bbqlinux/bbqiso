@@ -20,6 +20,7 @@ smmsp:x:25:
 http:x:33:
 games:x:50:
 lock:x:54:
+uuidd:x:68:
 dbus:x:81:
 avahi:x:84:
 network:x:90:
@@ -34,10 +35,12 @@ nobody:x:99:
 users:x:100:
 sudo:x:101:
 polkitd:x:102:
-gdm:x:120:
+colord:x:124:
 rtkit:x:133:
 usbmux:x:140:
 android:x:500:
+adbusers:x:501:
+lightdm:x:620:
 shutdown:x:1000:
 nopasswdlogin:x:1001:
 installer:x:1002:
