@@ -30,6 +30,7 @@ optical:x:93:
 floppy:x:94:
 storage:x:95:
 scanner:x:96:
+input:x:97:
 power:x:98:
 nobody:x:99:
 users:x:100:
@@ -38,9 +39,17 @@ polkitd:x:102:
 colord:x:124:
 rtkit:x:133:
 usbmux:x:140:
+systemd-journal:x:190:
+systemd-journal-gateway:x:191:
+systemd-timesync:x:192:
+systemd-network:x:193:
+systemd-bus-proxy:x:194:
+systemd-resolve:x:195:
 android:x:500:
 adbusers:x:501:
 lightdm:x:620:
+systemd-journal-upload:x:998:
+systemd-journal-remote:x:999:
 shutdown:x:1000:
 nopasswdlogin:x:1001:
 installer:x:1002:
