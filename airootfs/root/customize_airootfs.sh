@@ -25,7 +25,7 @@ systemctl enable adb.service
 
 # Network configuration
 systemctl enable systemd-resolved.service
-ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf
+#ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # Default to python2
 rm -f /usr/bin/python
