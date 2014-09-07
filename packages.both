@@ -70,7 +70,7 @@ gvfs-smb
 haveged
 heimdall
 hdparm
-icedtea-web-java7
+icedtea-web
 intel-ucode
 intltool
 inxi
@@ -81,6 +81,10 @@ jdk7-openjdk
 jre7-openjdk
 jre7-openjdk-headless 
 lftp
+lib32-glu
+lib32-mesa
+lib32-mesa-demos
+lib32-mesa-libgl
 libgnomeui
 libmtp
 libpng
@@ -91,6 +95,9 @@ linux-atm
 make
 mc
 meld
+mesa
+mesa-demos
+mesa-libgl
 mtools
 mtpfs
 nano
