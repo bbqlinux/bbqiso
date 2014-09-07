@@ -23,6 +23,10 @@ systemctl enable choose-mirror.service
 systemctl enable lightdm.service
 systemctl enable adb.service
 
+# Network configuration
+systemctl enable systemd-resolved.service
+ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
 # Default to python2
 rm -f /usr/bin/python
 ln -sf /usr/bin/python2 /usr/bin/python
