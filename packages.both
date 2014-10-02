@@ -81,10 +81,6 @@ jdk7-openjdk
 jre7-openjdk
 jre7-openjdk-headless 
 lftp
-lib32-glu
-lib32-mesa
-lib32-mesa-demos
-lib32-mesa-libgl
 libgnomeui
 libmtp
 libpng
@@ -97,7 +93,9 @@ mc
 meld
 mesa
 mesa-demos
+mesa-dri
 mesa-libgl
+mesa-vdpau
 mtools
 mtpfs
 nano
