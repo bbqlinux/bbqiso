@@ -79,7 +79,10 @@ ipw2200-fw
 irssi
 jdk7-openjdk
 jre7-openjdk
-jre7-openjdk-headless 
+jre7-openjdk-headless
+jdk8-openjdk
+jre8-openjdk
+jre8-openjdk-headless
 lftp
 libgnomeui
 libmtp
@@ -130,8 +133,8 @@ pptpclient
 ppp
 pulseaudio
 pulseaudio-alsa
-python2-geoip
 python2
+python2-geoip
 python2-pyqt4
 readline
 repo
