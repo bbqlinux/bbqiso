@@ -24,3 +24,20 @@ newlightdmconfig.close()
 
 os.system("rm /etc/lightdm/lightdm.conf")
 os.system("mv /etc/lightdm/lightdm.conf.new /etc/lightdm/lightdm.conf")
+
+# configure pacman
+pacmanconf = open("/etc/pacman.conf", "r")
+newpacmanconf = open("/etc/pacman.conf.new", "w")
+
+for line in pacmanconf:
+    line = line.rstrip("\r\n")
+    if(line.startswith("IgnorePkg")):
+        newpacmanconf.write("#IgnorePkg   =\n")
+    else:
+        newpacmanconf.write("%s\n" % line)
+
+pacmanconf.close()
+newpacmanconf.close()
+
+os.system("rm /etc/pacman.conf")
+os.system("mv /etc/pacman.conf.new /etc/pacman.conf")
