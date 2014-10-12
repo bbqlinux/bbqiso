@@ -53,3 +53,4 @@ systemd-journal-remote:x:999:
 shutdown:x:1000:
 nopasswdlogin:x:1001:
 installer:x:1002:
+lpadmin:x:1003:

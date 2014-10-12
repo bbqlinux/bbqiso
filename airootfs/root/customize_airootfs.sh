@@ -22,6 +22,7 @@ systemctl enable pacman-init.service
 systemctl enable choose-mirror.service
 systemctl enable lightdm.service
 systemctl enable adb.service
+systemctl enable cups.service
 
 # Network configuration
 systemctl enable systemd-resolved.service

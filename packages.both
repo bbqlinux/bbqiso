@@ -23,6 +23,7 @@ ccache
 clonezilla
 cpio
 crda
+cups
 dbus
 ddrescue
 dhclient
@@ -150,6 +151,7 @@ speedtouch
 squashfs-tools
 sudo
 swt
+system-config-printer
 systemd
 tcpdump
 terminus-font
