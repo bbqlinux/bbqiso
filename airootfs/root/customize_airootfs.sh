@@ -22,11 +22,10 @@ systemctl enable pacman-init.service
 systemctl enable choose-mirror.service
 systemctl enable lightdm.service
 systemctl enable adb.service
-systemctl enable cups.service
+systemctl enable org.cups.cupsd.service
 
 # Network configuration
 systemctl enable systemd-resolved.service
-#ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # Default to python2
 rm -f /usr/bin/python
