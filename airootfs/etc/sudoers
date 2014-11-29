@@ -90,5 +90,4 @@ root ALL=(ALL) ALL
 #includedir /etc/sudoers.d
 
 # installer group
- %installer ALL=(root) NOPASSWD: /usr/bin/bbqlinux-installer
  %installer ALL=(root) NOPASSWD: /usr/bin/calamares
