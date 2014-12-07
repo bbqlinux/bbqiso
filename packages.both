@@ -106,6 +106,7 @@ mtools
 mtpfs
 nano
 ncurses
+ndiswrapper
 networkmanager
 network-manager-applet
 nfs-utils
