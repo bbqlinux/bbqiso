@@ -27,6 +27,7 @@ systemctl enable org.cups.cupsd.service
 
 # Network configuration
 systemctl enable systemd-resolved.service
+systemctl enable modemmanager.service
 
 # Default to python2
 rm -f /usr/bin/python
