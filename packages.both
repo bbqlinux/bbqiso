@@ -101,6 +101,7 @@ mesa-demos
 mesa-dri
 mesa-libgl
 mesa-vdpau
+modemmanager
 mtools
 mtpfs
 nano
@@ -165,6 +166,7 @@ ttf-linux-libertine
 ttf-ubuntu-font-family
 tumbler
 unzip
+usbutils
 usb_modeswitch
 virtualbox-guest-utils
 vlc
