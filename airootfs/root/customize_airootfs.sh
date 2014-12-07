@@ -29,7 +29,7 @@ systemctl enable org.cups.cupsd.service
 systemctl enable dhcpcd.service
 systemctl enable NetworkManager.service
 systemctl enable systemd-resolved.service
-systemctl enable modemmanager.service
+systemctl enable ModemManager.service
 
 # Default to python2
 rm -f /usr/bin/python
