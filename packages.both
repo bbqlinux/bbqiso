@@ -16,10 +16,12 @@ bbqlinux-livemedia
 bbqlinux-mirrorlist
 binutils
 bison
+brasero
 btrfs-progs
 calamares
 calamares-bbqlinux
 ccache
+cdrkit
 clonezilla
 cpio
 crda
@@ -32,6 +34,7 @@ dmraid
 dnsmasq
 dnsutils
 dosfstools
+dvdauthor
 efibootmgr
 elinks
 ethtool
@@ -45,6 +48,7 @@ firefox-adblock-plus
 flashplugin
 flex
 fsarchiver
+fuseiso
 gamin
 geany
 geany-themes
@@ -86,7 +90,9 @@ jdk8-openjdk
 jre8-openjdk
 jre8-openjdk-headless
 lftp
+libburn
 libgnomeui
+libisofs
 libmtp
 libpng
 libreoffice-fresh
@@ -102,6 +108,11 @@ mesa-dri
 mesa-libgl
 mesa-vdpau
 modemmanager
+mono
+mono-basic
+mono-tools
+monodevelop
+monodevelop-debugger-gdb
 mtools
 mtpfs
 nano
@@ -186,13 +197,11 @@ xf86-input-mouse
 xf86-input-synaptics
 xf86-input-vmmouse
 xf86-video-ati
-xf86-video-cirrus
 xf86-video-fbdev
 xf86-video-i740
 xf86-video-intel
 xf86-video-modesetting
 xf86-video-nouveau
-xf86-video-sis
 xf86-video-vesa
 xf86-video-vmware
 xl2tpd
