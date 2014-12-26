@@ -24,6 +24,7 @@ systemctl enable lightdm.service
 systemctl enable ntpd.service
 systemctl enable adb.service
 systemctl enable org.cups.cupsd.service
+systemctl enable haveged
 
 # Network configuration
 systemctl enable dhcpcd.service
