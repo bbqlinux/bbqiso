@@ -7,6 +7,7 @@ android-sdk-build-tools
 android-studio
 android-support
 android-udev-rules
+apache
 arch-install-scripts
 autoconf
 automake
@@ -87,6 +88,7 @@ haveged
 heimdall
 hdparm
 icedtea-web
+inkscape
 intel-ucode
 intltool
 inxi
@@ -110,6 +112,7 @@ libusb
 libusb-compat
 linux-atm
 make
+mariadb
 mc
 meld
 mesa
@@ -138,6 +141,7 @@ ntfsprogs
 ntp
 openconnect
 openssh
+openssl
 openvpn
 optipng
 os-prober
@@ -150,6 +154,8 @@ patch
 pavucontrol
 perl
 perl-switch
+php
+php-apache
 pkg-config
 pngcrush
 polkit
@@ -166,6 +172,7 @@ repo
 rfkill
 rp-pppoe
 rsync
+samba
 schedtool
 sdl
 sharutils
@@ -179,6 +186,7 @@ systemd
 tcpdump
 terminus-font
 testdisk
+thunderbird
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
