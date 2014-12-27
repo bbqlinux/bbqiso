@@ -52,6 +52,16 @@ fuseiso
 gamin
 geany
 geany-themes
+gimp
+gimp-dbp
+gimp-plugin-fblur
+gimp-plugin-gmic
+gimp-plugin-lqr
+gimp-plugin-mathmap
+gimp-plugin-wavelet-decompose
+gimp-plugin-wavelet-denoise
+gimp-refocus
+gimp-ufraw
 git
 gksu
 gnome-colors-icon-theme
