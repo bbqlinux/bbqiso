@@ -68,7 +68,6 @@ gksu
 gnome-colors-icon-theme
 gnome-colors-icon-theme-extras
 gnome-icon-theme
-gnome-packagekit
 gnupg
 gnu-netcat
 gparted
@@ -84,12 +83,10 @@ gvfs-afc
 gvfs-gphoto2
 gvfs-mtp
 gvfs-smb
-haveged
 heimdall
 hdparm
 icedtea-web
 inkscape
-intel-ucode
 intltool
 inxi
 ipw2100-fw
@@ -147,6 +144,7 @@ optipng
 os-prober
 p7zip
 package-query
+packagekit
 partclone
 parted
 partimage
@@ -235,4 +233,3 @@ yaourt
 zip
 zd1211-firmware
 zlib
-zsh

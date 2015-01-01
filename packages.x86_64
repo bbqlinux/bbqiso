@@ -1,6 +1,5 @@
 gcc-libs-multilib 
 gcc-multilib
-gummiboot
 lib32-alsa-plugins
 lib32-gcc-libs
 lib32-glu
@@ -13,5 +12,3 @@ lib32-ncurses
 lib32-readline
 lib32-zlib
 libtool-multilib
-prebootloader
-refind-efi
