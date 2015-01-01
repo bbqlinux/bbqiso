@@ -68,6 +68,7 @@ gksu
 gnome-colors-icon-theme
 gnome-colors-icon-theme-extras
 gnome-icon-theme
+gnome-packagekit
 gnupg
 gnu-netcat
 gparted
@@ -144,7 +145,6 @@ optipng
 os-prober
 p7zip
 package-query
-packagekit
 partclone
 parted
 partimage
