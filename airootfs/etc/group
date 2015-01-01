@@ -23,6 +23,7 @@ lock:x:54:
 uuidd:x:68:
 dbus:x:81:
 avahi:x:84:
+mysql:x:89:
 network:x:90:
 video:x:91:
 audio:x:92:
@@ -36,6 +37,7 @@ nobody:x:99:
 users:x:100:
 sudo:x:101:
 polkitd:x:102:
+vboxsf:x:109:
 colord:x:124:
 rtkit:x:133:
 usbmux:x:140:
