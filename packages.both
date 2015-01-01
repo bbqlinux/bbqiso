@@ -12,6 +12,7 @@ arch-install-scripts
 autoconf
 automake
 b43-fwcutter
+bash-completion
 bbqlinux
 bbqlinux-livemedia
 bbqlinux-mirrorlist
