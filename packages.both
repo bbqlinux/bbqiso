@@ -9,6 +9,7 @@ android-support
 android-udev-rules
 apache
 arch-install-scripts
+archlinux-keyring
 autoconf
 automake
 b43-fwcutter
@@ -222,7 +223,6 @@ xf86-video-ati
 xf86-video-fbdev
 xf86-video-i740
 xf86-video-intel
-xf86-video-modesetting
 xf86-video-nouveau
 xf86-video-vesa
 xf86-video-vmware
