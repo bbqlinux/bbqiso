@@ -9,10 +9,7 @@ usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
 chmod 700 /root
 
-chmod 750 /etc/sudoers.d
-chmod 440 /etc/sudoers.d/g_wheel
 chown root:root /etc/sudoers
-chown -R root:root /etc/sudoers.d
 
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
 sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
