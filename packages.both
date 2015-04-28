@@ -131,7 +131,7 @@ mtools
 mtpfs
 nano
 ncurses
-ndiswrapper
+ndiswrapper-dkms
 networkmanager
 network-manager-applet
 nfs-utils
