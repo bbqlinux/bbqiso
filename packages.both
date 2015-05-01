@@ -112,6 +112,7 @@ libreoffice-fresh
 libusb
 libusb-compat
 linux-atm
+linux-headers
 make
 mariadb
 mc
