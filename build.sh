@@ -6,6 +6,7 @@ iso_arch=x86_64
 iso_name=bbqlinux
 iso_label="BBQLINUX"
 iso_version=$(date +%Y.%m.%d)
+iso_de=mate
 install_dir=bbqlinux
 work_dir=work
 out_dir=out
@@ -241,7 +242,7 @@ make_prepare() {
 
 # Build ISO
 make_iso() {
-    bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" -L "${iso_label}" -o "${out_dir}" iso "${iso_name}-${iso_version}-${iso_arch}.iso"
+    bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" -L "${iso_label}" -o "${out_dir}" iso "${iso_name}-${iso_version}-${iso_arch}-${iso_de}.iso"
 }
 
 if [[ ${EUID} -ne 0 ]]; then
