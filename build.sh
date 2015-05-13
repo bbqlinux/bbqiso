@@ -6,7 +6,7 @@ iso_arch=x86_64
 iso_name=bbqlinux
 iso_label="BBQLINUX"
 iso_version=$(date +%Y.%m.%d)
-iso_de=mate
+desktop_env=mate
 install_dir=bbqlinux
 work_dir=work
 out_dir=out
@@ -21,22 +21,24 @@ _usage ()
     echo "usage ${0} [options]"
     echo
     echo " General options:"
-    echo "    -A <iso_arch>      Set iso target architecture"
-    echo "                        Default: ${iso_arch}"
-    echo "    -N <iso_name>      Set an iso filename (prefix)"
-    echo "                        Default: ${iso_name}"
-    echo "    -V <iso_version>   Set an iso version (in filename)"
-    echo "                        Default: ${iso_version}"
-    echo "    -L <iso_label>     Set an iso label (disk label)"
-    echo "                        Default: ${iso_label}"
-    echo "    -D <install_dir>   Set an install_dir (directory inside iso)"
-    echo "                        Default: ${install_dir}"
-    echo "    -w <work_dir>      Set the working directory"
-    echo "                        Default: ${work_dir}"
-    echo "    -o <out_dir>       Set the output directory"
-    echo "                        Default: ${out_dir}"
-    echo "    -v                 Enable verbose output"
-    echo "    -h                 This help message"
+    echo "    -A <iso_arch>             Set iso target architecture"
+    echo "                               Default: ${iso_arch}"
+    echo "    -N <iso_name>             Set an iso filename (prefix)"
+    echo "                               Default: ${iso_name}"
+    echo "    -V <iso_version>          Set an iso version (in filename)"
+    echo "                               Default: ${iso_version}"
+    echo "    -L <iso_label>            Set an iso label (disk label)"
+    echo "                               Default: ${iso_label}"
+    echo "    -E <desktop_env>          Set desktop environment"
+    echo "                               Default: ${desktop_env}"
+    echo "    -D <install_dir>          Set an install_dir (directory inside iso)"
+    echo "                               Default: ${install_dir}"
+    echo "    -w <work_dir>             Set the working directory"
+    echo "                               Default: ${work_dir}"
+    echo "    -o <out_dir>              Set the output directory"
+    echo "                               Default: ${out_dir}"
+    echo "    -v                        Enable verbose output"
+    echo "    -h                        This help message"
     exit ${1}
 }
 
@@ -72,6 +74,18 @@ make_packages() {
         setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
     fi
     setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${iso_arch}})" install
+}
+
+# Desktop Environment
+make_desktop_env() {
+    case "${desktop_env}" in
+    "mate" | "plasma" | "gnome")
+        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "bbqlinux-desktop-${desktop_env}" install
+        ;;
+    *)
+        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "bbqlinux-desktop-mate" install
+        ;;
+    esac
 }
 
 # Needed packages for x86_64 EFI boot
@@ -242,7 +256,7 @@ make_prepare() {
 
 # Build ISO
 make_iso() {
-    bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" -L "${iso_label}" -o "${out_dir}" iso "${iso_name}-${iso_version}-${iso_arch}-${iso_de}.iso"
+    bbqmkiso ${verbose} -w "${work_dir}" -D "${install_dir}" -L "${iso_label}" -o "${out_dir}" iso "${iso_name}-${iso_version}-${iso_arch}-${desktop_env}.iso"
 }
 
 if [[ ${EUID} -ne 0 ]]; then
@@ -255,12 +269,13 @@ if [[ ${iso_arch} != x86_64 ]]; then
     _usage 1
 fi
 
-while getopts 'A:N:V:L:D:w:o:vh' arg; do
+while getopts 'A:N:V:L:E:D:w:o:vh' arg; do
     case "${arg}" in
 		A) iso_arch="${OPTARG}" ;;
         N) iso_name="${OPTARG}" ;;
         V) iso_version="${OPTARG}" ;;
         L) iso_label="${OPTARG}" ;;
+        E) desktop_env="${OPTARG}";;
         D) install_dir="${OPTARG}" ;;
         w) work_dir="${OPTARG}" ;;
         o) out_dir="${OPTARG}" ;;
@@ -273,11 +288,21 @@ while getopts 'A:N:V:L:D:w:o:vh' arg; do
     esac
 done
 
+echo "------------------------------------"
+echo " BBQLINUX Configuration             "
+echo "------------------------------------"
+echo " Arch: ${iso_arch}                  "
+echo " Desktop Environment: ${desktop_env}"
+echo "------------------------------------"
+
+sleep 3
+
 mkdir -p ${work_dir}
 
 run_once make_pacman_conf
 run_once make_basefs
 run_once make_packages
+run_once make_desktop_env
 run_once make_packages_efi
 run_once make_setup_mkinitcpio
 run_once make_customize_airootfs
