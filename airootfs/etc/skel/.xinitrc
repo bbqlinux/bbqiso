@@ -15,6 +15,12 @@ mate)
 kde)
 	exec startkde
 	;;
+plasma)
+	exec startkde
+	;;
+gnome)
+	exec gnome-session
+	;;
 xfce4)
 	exec startxfce4
 	;;

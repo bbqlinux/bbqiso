@@ -1,7 +1,18 @@
 import os
 import commands
 import sys
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--desktop_env', help='Desktop Environment: mate gnome plasma')
+args = parser.parse_args()
+
+if not args.desktop_env or (args.desktop_env == ""):
+	desktop_env = "mate"
+else:
+	desktop_env = args.desktop_env
+
+print "Desktop Environment: %s" % desktop_env
 
 # configure lightdm
 lightdmconfig = open("/etc/lightdm/lightdm.conf", "r")
@@ -12,7 +23,7 @@ for line in lightdmconfig:
     if(line.startswith("#greeter-session=")):
         newlightdmconfig.write("greeter-session=lightdm-gtk-greeter\n")
     elif(line.startswith("#user-session=")):
-        newlightdmconfig.write("user-session=default\n")
+        newlightdmconfig.write("user-session=%s\n" % desktop_env)
     elif(line.startswith("#autologin-user=")):
         newlightdmconfig.write("autologin-user=bbqlinux\n")
     elif(line.startswith("#autologin-user-timeout=0")):

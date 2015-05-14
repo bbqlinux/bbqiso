@@ -128,7 +128,7 @@ make_customize_airootfs() {
     setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r '/root/customize_airootfs.sh' run
     rm ${work_dir}/${iso_arch}/airootfs/root/customize_airootfs.sh
     
-    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r 'python /root/customize_airootfs.py' run
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r "python /root/customize_airootfs.py --desktop_env ${desktop_env}" run
     rm ${work_dir}/${iso_arch}/airootfs/root/customize_airootfs.py
 }
 
