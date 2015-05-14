@@ -11,8 +11,8 @@ for line in lightdmconfig:
     line = line.rstrip("\r\n")
     if(line.startswith("#greeter-session=")):
         newlightdmconfig.write("greeter-session=lightdm-gtk-greeter\n")
-    #elif(line.startswith("#user-session=")):
-        #newlightdmconfig.write("user-session=mate\n")
+    elif(line.startswith("#user-session=")):
+        newlightdmconfig.write("user-session=default\n")
     elif(line.startswith("#autologin-user=")):
         newlightdmconfig.write("autologin-user=bbqlinux\n")
     elif(line.startswith("#autologin-user-timeout=0")):
