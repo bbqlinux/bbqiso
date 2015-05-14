@@ -67,15 +67,6 @@ make_basefs() {
     setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "haveged intel-ucode memtest86+ mkinitcpio-nfs-utils nbd zsh" install
 }
 
-# Additional packages (airootfs)
-make_packages() {
-    if [[ ${iso_arch} == x86_64 ]]; then
-        # remove gcc-libs to avoid conflict with gcc-libs-multilib
-        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
-    fi
-    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${iso_arch}})" install
-}
-
 # Desktop Environment
 make_desktop_env() {
     case "${desktop_env}" in
@@ -86,6 +77,15 @@ make_desktop_env() {
         setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "bbqlinux-desktop-mate" install
         ;;
     esac
+}
+
+# Additional packages (airootfs)
+make_packages() {
+    if [[ ${iso_arch} == x86_64 ]]; then
+        # remove gcc-libs to avoid conflict with gcc-libs-multilib
+        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
+    fi
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${iso_arch}})" install
 }
 
 # Needed packages for x86_64 EFI boot
@@ -301,8 +301,8 @@ mkdir -p ${work_dir}
 
 run_once make_pacman_conf
 run_once make_basefs
-run_once make_packages
 run_once make_desktop_env
+run_once make_packages
 run_once make_packages_efi
 run_once make_setup_mkinitcpio
 run_once make_customize_airootfs
