@@ -12,16 +12,13 @@ case $1 in
 mate)
 	exec mate-session
 	;;
-kde)
-	exec startkde
-	;;
-plasma)
+kde | plasma)
 	exec startkde
 	;;
 gnome)
 	exec gnome-session
 	;;
-xfce4)
+xfce | xfce4)
 	exec startxfce4
 	;;
 icewm)

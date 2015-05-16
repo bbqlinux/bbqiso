@@ -4,13 +4,16 @@ import sys
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--desktop_env', help='Desktop Environment: gnome mate plasma xfce4')
+parser.add_argument('--desktop_env', help='Desktop Environment: gnome mate plasma xfce')
 args = parser.parse_args()
 
 if not args.desktop_env or (args.desktop_env == ""):
 	desktop_env = "mate"
 else:
-	desktop_env = args.desktop_env
+	if args.desktop_env == "xfce4":
+		desktop_env = "xfce"
+	else:
+		desktop_env = args.desktop_env
 
 print "Desktop Environment: %s" % desktop_env
 
