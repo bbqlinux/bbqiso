@@ -166,6 +166,10 @@ pptpclient
 ppp
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
+pulseaudio-equalizer
+pulseaudio-gconf
+pulseaudio-jack
 python2
 python2-geoip
 python2-pyqt4
