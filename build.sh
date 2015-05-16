@@ -79,7 +79,7 @@ make_packages() {
 # Desktop Environment
 make_desktop_env() {
     case "${desktop_env}" in
-    "mate" | "plasma" | "gnome")
+    "gnome" | "mate" | "plasma" | "xfce4")
         setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "bbqlinux-desktop-${desktop_env}" install
         ;;
     *)
