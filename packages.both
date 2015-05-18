@@ -141,6 +141,7 @@ nmap
 ntfs-3g
 ntfsprogs
 ntp
+open-vm-tools
 openconnect
 openssh
 openssl
