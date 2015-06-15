@@ -23,7 +23,16 @@ newlightdmconfig = open("/etc/lightdm/lightdm.conf.new", "w")
 
 for line in lightdmconfig:
     line = line.rstrip("\r\n")
-    if(line.startswith("#greeter-session=")):
+
+    if(line.startswith("#greeter-user=lightdm")):
+        newlightdmconfig.write("greeter-user=lightdm\n")
+    elif(line.startswith("#pam-service=lightdm")):
+        newlightdmconfig.write("pam-service=lightdm\n")
+    elif(line.startswith("#pam-autologin-service=lightdm-autologin")):
+        newlightdmconfig.write("pam-autologin-service=lightdm-autologin\n")
+    elif(line.startswith("#pam-greeter-service=lightdm-greeter")):
+        newlightdmconfig.write("pam-greeter-service=lightdm-greeter\n")
+    elif(line.startswith("#greeter-session=")):
         newlightdmconfig.write("greeter-session=lightdm-gtk-greeter\n")
     elif(line.startswith("#user-session=")):
         newlightdmconfig.write("user-session=%s\n" % desktop_env)
