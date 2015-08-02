@@ -175,6 +175,7 @@ python2
 python2-geoip
 python2-pyqt4
 readline
+refind-efi
 repo
 rfkill
 rp-pppoe
