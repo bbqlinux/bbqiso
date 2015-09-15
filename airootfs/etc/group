@@ -23,6 +23,7 @@ lock:x:54:
 uuidd:x:68:
 dbus:x:81:
 avahi:x:84:
+ntp:x:87:
 mysql:x:89:
 network:x:90:
 video:x:91:
