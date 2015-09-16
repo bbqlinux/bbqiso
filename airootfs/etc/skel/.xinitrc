@@ -15,6 +15,9 @@ mate)
 kde | plasma)
 	exec startkde
 	;;
+cinnamon)
+    exec cinnamon-session
+    ;;
 gnome)
 	exec gnome-session
 	;;
