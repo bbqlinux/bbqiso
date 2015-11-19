@@ -51,6 +51,7 @@ systemd-resolve:x:195:
 android:x:500:
 adbusers:x:501:
 lightdm:x:620:
+dnsmasq:x:996:
 systemd-journal-upload:x:998:
 systemd-journal-remote:x:999:
 shutdown:x:1000:
