@@ -17,6 +17,24 @@ else:
 
 print "Desktop Environment: %s" % desktop_env
 
+# configure .xinitrc
+xinitrc = open("/etc/skel/.xinitrc", "r")
+newxinitrc = open("/etc/skel/.xinitrc.new", "w")
+
+for line in xinitrc:
+    line = line.rstrip("\r\n")
+
+    if(line.startswith("DEFAULT_SESSION=")):
+        newxinitrc.write("DEFAULT_SESSION=%s\n" % desktop_env)
+    else:
+        newxinitrc.write("%s\n" % line)
+
+xinitrc.close()
+newxinitrc.close()
+
+os.system("rm /etc/skel/.xinitrc")
+os.system("mv /etc/skel/.xinitrc.new /etc/skel/.xinitrc")
+
 # configure lightdm
 lightdmconfig = open("/etc/lightdm/lightdm.conf", "r")
 newlightdmconfig = open("/etc/lightdm/lightdm.conf.new", "w")
