@@ -134,6 +134,7 @@ mtools
 mtpfs
 nano
 ncurses
+ncurses5-compat-libs
 ndiswrapper-dkms
 networkmanager
 network-manager-applet
