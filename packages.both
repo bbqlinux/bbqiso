@@ -111,6 +111,7 @@ libisofs
 libmtp
 libpng
 libreoffice-fresh
+libtinfo
 libusb
 libusb-compat
 linux-atm
