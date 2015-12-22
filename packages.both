@@ -107,6 +107,7 @@ jre8-openjdk-headless
 lftp
 libburn
 libgnomeui
+libinput
 libisofs
 libmtp
 libpng
