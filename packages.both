@@ -7,7 +7,6 @@ android-sdk-build-tools
 android-studio
 android-support
 android-udev-rules
-apache
 arch-install-scripts
 archlinux-keyring
 autoconf
@@ -117,7 +116,6 @@ libusb-compat
 linux-atm
 linux-headers
 make
-mariadb
 mc
 meld
 mesa
@@ -161,8 +159,6 @@ patch
 pavucontrol
 perl
 perl-switch
-php
-php-apache
 pkg-config
 pngcrush
 polkit
