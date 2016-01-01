@@ -7,9 +7,10 @@ locale-gen
 
 usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
-chmod 700 /root
 
-chown root:root /etc/sudoers
+chown -R root:root /etc
+chown -R root:root /root
+chmod 700 /root
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
