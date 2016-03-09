@@ -14,4 +14,5 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export PATH
+export JAVA_HOME=/usr/lib/jvm/default
 export LC_ALL=C
