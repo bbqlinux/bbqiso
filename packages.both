@@ -118,6 +118,7 @@ libusb
 libusb-compat
 linux-atm
 linux-headers
+lsscsi
 make
 mc
 meld
@@ -186,6 +187,8 @@ rsync
 samba
 schedtool
 sdl
+sdparm
+sg3_utils
 sharutils
 smartmontools
 speedtouch
