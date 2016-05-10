@@ -10,6 +10,7 @@ desktop_env=mate
 install_dir=bbqlinux
 work_dir=work
 out_dir=out
+gpg_key=
 
 arch=$(uname -m)
 verbose=""
