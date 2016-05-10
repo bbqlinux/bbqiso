@@ -314,6 +314,11 @@ mkdir -p ${work_dir}
 run_once make_pacman_conf
 run_once make_basefs
 run_once make_packages
+
+sleep 5
+umount ${work_dir}/${iso_arch}/airootfs/dev
+umount ${work_dir}/${iso_arch}/airootfs
+
 run_once make_desktop_env
 run_once make_packages_efi
 run_once make_setup_mkinitcpio
