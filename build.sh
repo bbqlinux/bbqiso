@@ -91,7 +91,7 @@ make_desktop_env() {
 
 # Needed packages for x86_64 EFI boot
 make_packages_efi() {
-    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "prebootloader" install
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "efitools" install
 }
 
 # Copy mkinitcpio archiso hooks and build initramfs (airootfs)
@@ -199,8 +199,8 @@ make_isolinux() {
 # Prepare /EFI
 make_efi() {
     mkdir -p ${work_dir}/iso/EFI/boot
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/PreLoader.efi ${work_dir}/iso/EFI/boot/bootx64.efi
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/HashTool.efi ${work_dir}/iso/EFI/boot/
+    cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/PreLoader.efi ${work_dir}/iso/EFI/boot/bootx64.efi
+    cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/HashTool.efi ${work_dir}/iso/EFI/boot/
 
     cp ${work_dir}/x86_64/airootfs/usr/lib/systemd/boot/efi/systemd-bootx64.efi ${work_dir}/iso/EFI/boot/loader.efi
 
@@ -237,8 +237,8 @@ make_efiboot() {
     cp ${work_dir}/iso/${install_dir}/boot/intel_ucode.img ${work_dir}/efiboot/EFI/archiso/intel_ucode.img
 
     mkdir -p ${work_dir}/efiboot/EFI/boot
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/PreLoader.efi ${work_dir}/efiboot/EFI/boot/bootx64.efi
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/HashTool.efi ${work_dir}/efiboot/EFI/boot/
+    cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/PreLoader.efi ${work_dir}/efiboot/EFI/boot/bootx64.efi
+    cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/HashTool.efi ${work_dir}/efiboot/EFI/boot/
 
     cp ${work_dir}/x86_64/airootfs/usr/lib/systemd/boot/efi/systemd-bootx64.efi ${work_dir}/efiboot/EFI/boot/loader.efi
 
@@ -316,8 +316,14 @@ run_once make_basefs
 run_once make_packages
 
 sleep 5
-umount ${work_dir}/${iso_arch}/airootfs/dev
-umount ${work_dir}/${iso_arch}/airootfs
+
+if mount | grep ${work_dir}/${iso_arch}/airootfs/dev > /dev/null; then
+    umount ${work_dir}/${iso_arch}/airootfs/dev
+fi
+
+if mount | grep ${work_dir}/${iso_arch}/airootfs > /dev/null; then
+    umount ${work_dir}/${iso_arch}/airootfs
+fi
 
 run_once make_desktop_env
 run_once make_packages_efi
