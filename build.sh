@@ -6,7 +6,7 @@ iso_arch=x86_64
 iso_name=bbqlinux
 iso_label="BBQLINUX"
 iso_version=$(date +%Y.%m.%d)
-desktop_env=mate
+desktop_env=cinnamon
 install_dir=bbqlinux
 work_dir=work
 out_dir=out
@@ -84,7 +84,7 @@ make_desktop_env() {
         setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "bbqlinux-desktop-${desktop_env}" install
         ;;
     *)
-        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "bbqlinux-desktop-mate" install
+        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "bbqlinux-desktop-cinnamon" install
         ;;
     esac
 }
