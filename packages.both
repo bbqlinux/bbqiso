@@ -120,6 +120,7 @@ linux-atm
 linux-headers
 lsscsi
 make
+maven
 mc
 meld
 mesa
