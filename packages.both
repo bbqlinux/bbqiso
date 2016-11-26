@@ -45,6 +45,7 @@ efibootmgr
 elinks
 ethtool
 evince
+exfat-utils
 expect
 f2fs-tools
 fakeroot
@@ -139,6 +140,7 @@ mtpfs
 nano
 ncurses
 ncurses5-compat-libs
+ndisc6
 ndiswrapper-dkms
 networkmanager
 network-manager-applet
