@@ -12,3 +12,4 @@ lib32-ncurses
 lib32-readline
 lib32-zlib
 libtool-multilib
+simg-tools
