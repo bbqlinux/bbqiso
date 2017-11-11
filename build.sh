@@ -55,11 +55,7 @@ run_once() {
 make_pacman_conf() {
     local _cache_dirs
     _cache_dirs=($(pacman -v 2>&1 | grep '^Cache Dirs:' | sed 's/Cache Dirs:\s*//g'))
-    if [[ ${iso_arch} == "x86_64" ]]; then
-        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.x86_64.conf > ${work_dir}/pacman.conf
-    else
-        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.i686.conf > ${work_dir}/pacman.conf
-    fi
+    sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.x86_64.conf > ${work_dir}/pacman.conf
 }
 
 # Base installation, plus needed packages (airootfs)
@@ -70,11 +66,10 @@ make_basefs() {
 
 # Additional packages (airootfs)
 make_packages() {
-    if [[ ${iso_arch} == x86_64 ]]; then
-        # remove gcc-libs to avoid conflict with gcc-libs-multilib
-        setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
-    fi
-    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${iso_arch}})" install
+    # remove gcc-libs to avoid conflict with gcc-libs-multilib
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
+
+    setarch ${iso_arch} bbqmkiso ${verbose} -w "${work_dir}/${iso_arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.${iso_arch})" install
 }
 
 # Desktop Environment
@@ -122,13 +117,7 @@ make_setup_mkinitcpio() {
 make_customize_airootfs() {
     cp -af ${script_path}/airootfs ${work_dir}/${iso_arch}
 
-    if [[ ${iso_arch} == x86_64 ]]; then
-        rm ${work_dir}/${iso_arch}/airootfs/etc/pacman.i686.conf
-        mv ${work_dir}/${iso_arch}/airootfs/etc/pacman.x86_64.conf ${work_dir}/${iso_arch}/airootfs/etc/pacman.conf
-    else
-        rm ${work_dir}/${iso_arch}/airootfs/etc/pacman.x86_64.conf
-        mv ${work_dir}/${iso_arch}/airootfs/etc/pacman.i686.conf ${work_dir}/${iso_arch}/airootfs/etc/pacman.conf
-    fi
+    mv ${work_dir}/${iso_arch}/airootfs/etc/pacman.x86_64.conf ${work_dir}/${iso_arch}/airootfs/etc/pacman.conf
 
     wget -O ${work_dir}/${iso_arch}/airootfs/etc/pacman.d/mirrorlist 'https://www.archlinux.org/mirrorlist/?country=all&protocol=http&use_mirror_status=on'
 
@@ -158,15 +147,15 @@ make_boot_extra() {
 
 # Fetch packages for offline installation
 make_pkgcache() {
-    for pkg in $(grep -h -v ^# ${script_path}/pkgcache.{both,${iso_arch}})
+    for pkg in $(grep -h -v ^# ${script_path}/pkgcache.${iso_arch})
     do
         rm -f /var/cache/pacman/pkg/${pkg}-*
         # Get the download link from pacman
-		pkg_path=$(pacman -Sp ${pkg})
+        pkg_path=$(pacman -Sp ${pkg})
         # Download the package
-		wget -P ${work_dir}/${iso_arch}/airootfs/var/cache/pacman/pkg ${pkg_path}
+        wget -P ${work_dir}/${iso_arch}/airootfs/var/cache/pacman/pkg ${pkg_path}
         # Download the signature file
-		wget -P ${work_dir}/${iso_arch}/airootfs/var/cache/pacman/pkg ${pkg_path}.sig
+        wget -P ${work_dir}/${iso_arch}/airootfs/var/cache/pacman/pkg ${pkg_path}.sig
     done
 }
 
@@ -176,7 +165,7 @@ make_syslinux() {
     for _cfg in ${script_path}/syslinux/*.cfg; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
-			 s|%ARCH%|${iso_arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
+             s|%ARCH%|${iso_arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
     done
     cp ${script_path}/syslinux/splash.png ${work_dir}/iso/${install_dir}/boot/syslinux
     cp ${work_dir}/${iso_arch}/airootfs/usr/lib/syslinux/bios/*.c32 ${work_dir}/iso/${install_dir}/boot/syslinux
@@ -311,7 +300,7 @@ fi
 
 while getopts 'A:N:V:L:E:D:w:o:g:vh' arg; do
     case "${arg}" in
-		A) iso_arch="${OPTARG}" ;;
+        A) iso_arch="${OPTARG}" ;;
         N) iso_name="${OPTARG}" ;;
         V) iso_version="${OPTARG}" ;;
         L) iso_label="${OPTARG}" ;;
@@ -363,12 +352,8 @@ run_once make_boot_extra
 run_once make_pkgcache
 run_once make_syslinux
 run_once make_isolinux
-
-if [[ ${iso_arch} == x86_64 ]]; then
-    run_once make_efi
-    run_once make_efiboot
-fi
-
+run_once make_efi
+run_once make_efiboot
 run_once make_prepare
 run_once make_iso
 
