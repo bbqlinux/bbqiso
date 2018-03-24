@@ -10,6 +10,7 @@ android-support
 android-udev-rules
 arch-install-scripts
 archlinux-keyring
+aurman
 autoconf
 automake
 b43-fwcutter
@@ -169,7 +170,6 @@ openvpn
 optipng
 os-prober
 p7zip
-package-query
 partclone
 parted
 partimage
@@ -256,7 +256,6 @@ xorg-server
 xorg-server-xwayland
 xorg-xinit
 yajl
-yaourt
 zip
 zd1211-firmware
 zlib
