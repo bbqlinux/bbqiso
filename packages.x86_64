@@ -23,6 +23,7 @@ binutils
 bison
 blueberry
 brasero
+broadcom-wl
 btrfs-progs
 calamares
 calamares-bbqlinux
@@ -67,12 +68,9 @@ gimp-dbp
 gimp-plugin-fblur
 gimp-plugin-gmic
 gimp-plugin-lqr
-gimp-plugin-wavelet-decompose
 gimp-plugin-wavelet-denoise
 gimp-refocus
-gimp-ufraw
 git
-gksu
 gnome-colors-icon-theme
 gnome-colors-icon-theme-extras
 gnome-icon-theme
@@ -90,6 +88,7 @@ gst-plugins-base
 gst-plugins-good
 gtk-theme-shiki-colors
 gthumb
+gufw
 gvfs
 gvfs-afc
 gvfs-gphoto2
@@ -100,7 +99,6 @@ hdparm
 icedtea-web
 inkscape
 intltool
-inxi
 ipw2100-fw
 ipw2200-fw
 irssi
@@ -151,7 +149,6 @@ mtools
 mtpfs
 nano
 ncurses
-ncurses5-compat-libs
 ndisc6
 ndiswrapper-dkms
 networkmanager
@@ -227,6 +224,7 @@ ttf-liberation
 ttf-linux-libertine
 ttf-ubuntu-font-family
 tumbler
+ufw
 unzip
 usbutils
 usb_modeswitch
