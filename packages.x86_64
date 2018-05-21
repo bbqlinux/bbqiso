@@ -126,7 +126,6 @@ libisofs
 libmtp
 libpng
 libreoffice-fresh
-libtinfo
 libtool-multilib
 libusb
 libusb-compat
@@ -149,6 +148,7 @@ mtools
 mtpfs
 nano
 ncurses
+ncurses5-compat-libs
 ndisc6
 ndiswrapper-dkms
 networkmanager
