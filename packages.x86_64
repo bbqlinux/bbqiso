@@ -184,11 +184,8 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 pulseaudio-equalizer
-pulseaudio-gconf
 pulseaudio-jack
 python2
-python2-geoip
-python2-pyqt4
 readline
 redshift
 refind-efi
@@ -203,7 +200,6 @@ sg3_utils
 sharutils
 simg-tools
 smartmontools
-speedtouch
 squashfs-tools
 sudo
 swt
@@ -237,6 +233,7 @@ vpnc
 wayland
 weston
 wget
+wireless-regdb
 wireless_tools
 wpa_actiond
 wvdial
@@ -255,5 +252,4 @@ xorg-server-xwayland
 xorg-xinit
 yajl
 zip
-zd1211-firmware
 zlib
