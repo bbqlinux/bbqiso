@@ -10,7 +10,6 @@ android-support
 android-udev-rules
 arch-install-scripts
 archlinux-keyring
-aurman
 autoconf
 automake
 b43-fwcutter
@@ -250,5 +249,6 @@ xorg-server
 xorg-server-xwayland
 xorg-xinit
 yajl
+yay
 zip
 zlib
