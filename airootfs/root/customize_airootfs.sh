@@ -26,7 +26,7 @@ systemctl enable choose-mirror.service
 systemctl enable lightdm.service
 systemctl enable ntpd.service
 systemctl enable adb.service
-systemctl enable org.cups.cupsd.service
+systemctl enable cups.socket
 systemctl enable haveged
 
 # Network configuration
@@ -34,10 +34,6 @@ systemctl enable dhcpcd.service
 systemctl enable NetworkManager.service
 systemctl enable systemd-resolved.service
 systemctl enable ModemManager.service
-
-# Default to python2
-rm -f /usr/bin/python
-ln -sf /usr/bin/python2 /usr/bin/python
 
 # Use current date as version string
 echo $(date +"%Y%m%d") > /etc/bbqlinux-version

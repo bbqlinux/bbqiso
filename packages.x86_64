@@ -35,6 +35,7 @@ cups
 dbus
 ddrescue
 dhclient
+dhcpcd
 dialog
 dmraid
 dnsmasq

@@ -1,5 +1,4 @@
 import os
-import commands
 import sys
 import argparse
 
@@ -15,7 +14,7 @@ else:
 	else:
 		desktop_env = args.desktop_env
 
-print "Desktop Environment: %s" % desktop_env
+print("Desktop Environment: %s" % desktop_env)
 
 # configure .xinitrc
 xinitrc = open("/etc/skel/.xinitrc", "r")
