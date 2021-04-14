@@ -1,7 +1,6 @@
 accountsservice
 alsa-utils
 android-apktool
-android-host-tools
 android-sdk
 android-sdk-platform-tools
 android-sdk-build-tools
@@ -56,19 +55,13 @@ firefox-adblock-plus
 flex
 fsarchiver
 fuseiso
-gamin
-gcc-libs-multilib 
-gcc-multilib
+gcc-libs
+gcc
 geany
 geany-themes
 ghex
 gimp
-gimp-dbp
-gimp-plugin-fblur
 gimp-plugin-gmic
-gimp-plugin-lqr
-gimp-plugin-wavelet-denoise
-gimp-refocus
 git
 gnome-colors-icon-theme
 gnome-colors-icon-theme-extras
@@ -100,6 +93,7 @@ intltool
 ipw2100-fw
 ipw2200-fw
 irssi
+jack2
 jdk7-openjdk
 jre7-openjdk
 jre7-openjdk-headless
@@ -113,7 +107,6 @@ lib32-glu
 lib32-libpulse
 lib32-mesa
 lib32-mesa-demos
-lib32-mesa-dri
 lib32-mesa-libgl
 lib32-ncurses
 lib32-readline
@@ -136,9 +129,9 @@ mc
 meld
 mesa
 mesa-demos
-mesa-dri
 mesa-libgl
 mesa-vdpau
+mkinitcpio
 modemmanager
 mono
 mono-tools
@@ -186,7 +179,7 @@ pulseaudio-jack
 python2
 readline
 redshift
-refind-efi
+refind
 repo
 rp-pppoe
 rsync
@@ -233,9 +226,7 @@ weston
 wget
 wireless-regdb
 wireless_tools
-wpa_actiond
 wvdial
-wxgtk
 xf86-input-libinput
 xf86-video-amdgpu
 xf86-video-ati

@@ -70,8 +70,6 @@ make_basefs() {
 
 # Additional packages (airootfs)
 make_packages() {
-    # remove gcc-libs to avoid conflict with gcc-libs-multilib
-    bbqmkiso ${verbose} -w "${work_dir}/x86_64" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
     bbqmkiso ${verbose} -w "${work_dir}/x86_64" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.x86_64)" install
 }
 
